@@ -34,8 +34,11 @@ public class Program {
 		String str3 = "babad";
 		System.out.println(maiorPalindromo(str3));
 		
+		//Exercicio 4
+		String str4 = "hello. how are you? i'm fine, thank you.";
+		System.out.println(capitalizePhrase(str4));
 	}
-	
+
 	 public static String meioPalindromo(String s, int left, int right) {
 		if (left > right) return null;
 		while (left >= 0 && right < s.length()
@@ -45,7 +48,6 @@ public class Program {
 		}
 		return s.substring(left + 1, right);
 	}
-
 
 	public static String maiorPalindromo(String s) {
 		if (s == null) return null;
@@ -64,4 +66,24 @@ public class Program {
 		}
 		return maior;
 	}
+	
+	public static String capitalizePhrase(String input) {
+        StringBuilder output = new StringBuilder();
+        boolean proximo = true;
+
+        for (char c : input.toCharArray()) {
+            if (proximo && Character.isLetter(c)) {
+                output.append(Character.toUpperCase(c));
+                proximo = false;
+            } else {
+                output.append(c);
+            }
+
+            if (c == '.' || c == '?' || c == '!') {
+                proximo = true;
+            }
+        }
+
+        return output.toString();
+    }
 }

@@ -37,6 +37,11 @@ public class Program {
 		//Exercicio 4
 		String str4 = "hello. how are you? i'm fine, thank you.";
 		System.out.println(capitalizePhrase(str4));
+		
+		//Exercicio 5
+		String str5 = "racecar";
+		System.out.println(isPalindromo(str5));
+	
 	}
 
 	 public static String meioPalindromo(String s, int left, int right) {
@@ -86,4 +91,9 @@ public class Program {
 
         return output.toString();
     }
+	
+	public static boolean isPalindromo(String input) {
+	        String invertido = new StringBuilder(input).reverse().toString();
+	        return input.equals(invertido);
+	}
 }
